@@ -1,3 +1,4 @@
+# Implement a queue using two stacks. Process the following queries: 1 x -enqueue, 2-dequeue, 3-print.
 # problem from CTCI 
 
 class MyQueue(object):
