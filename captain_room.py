@@ -1,0 +1,6 @@
+K = int(input())
+roomList = list(map(int, input().split()))
+listSum = sum(roomList)
+setSum = sum(set(roomList))
+result = (setSum * K - listSum) // (K-1)
+print(result)
