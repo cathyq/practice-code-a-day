@@ -1,0 +1,50 @@
+def main() :
+
+    K = int(input())
+
+    assert K > 1 and K < 1000
+    room_no = [int(n) for n in input().split()]
+
+    unique_room_no = []
+    count_room_no = []
+    count = 1
+    flag = 0
+
+    captain_room_no = 0 
+        
+
+    length = len(room_no)
+    if length % K == 1 :
+        unique_room_no.extend(set(room_no))
+        for i in range(len(unique_room_no)) :
+            count_room_no.append(room_no.count(unique_room_no[i]))
+        print(unique_room_no)
+        print(count_room_no)
+        for i in range(len(count_room_no)) :
+            if ( count_room_no[i] == 1 ) :
+                pos = i
+
+        for i in range(len(count_room_no)-1) :
+            if (i == pos) :
+                i = i + 1
+            else :
+                if ( count_room_no[i] != K ) :
+                    flag = 0
+                    break
+                else :
+                    flag = 1
+                
+        captain_room_no = unique_room_no[pos]
+                    
+
+        if flag == 1 :
+            print(captain_room_no)
+        elif flag == 0 :
+             print("Basic Conditions are Invalid")
+                        
+    else :
+        print("Room Nos are not alloted in proper sequence ")
+
+
+if __name__=='__main__':
+   main()
