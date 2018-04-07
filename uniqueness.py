@@ -2,6 +2,7 @@
 # False = NOT unique, duplicate
 # True = Unique
 
+# Method 1 
 # Runtime: O(n^2)
 
 def stringReturn(x):
@@ -11,32 +12,42 @@ def stringReturn(x):
 				return False
 	return True
 
-print stringReturn("bcdefghijklmnopaz")
-print stringReturn("ab")
+print stringReturn("bcdefghijklmnopaz") 
+print stringReturn("ab") 
 print stringReturn(" ")
 print stringReturn("  ")
 print stringReturn("11")
 
 print "Better Version"
-# Better version 
+
+# Method 2  
 # Runtime: O(n)
 # Space: O(n)
 
-def stringHash(x):
-	D = {}
-	for i in range(0, len(x)):
-		D[x[i]] = True
-	for i in range(0, len(x)):
-		if D[x[i]] == True:
-			D[x[i]] = False
-		else:
-			return False
-	return True
+# def stringHash(x):
+# 	D = {}
+# 	for i in range(0, len(x)):
+# 		D[x[i]] = True
+# 	for i in range(0, len(x)):
+# 		if D[x[i]] == True:
+# 			D[x[i]] = False
+# 		else:
+# 			return False
+# 	return True
 
-print stringHash("aacdefghijklmnopqrstuvwxyz") # a=False, b=False, c=True
+def stringHash(string):
+    dictionary = {}
+    for i in string:
+        if i in dictionary:
+            return False  
+        else:
+            dictionary[i] = True
+    return True
+
+
+print stringHash("aacdefghijklmnopqrstuvwxyz") 
+print stringHash("sedjwnisnrh")
 print stringHash("abdc")
-
-
 
 
 
